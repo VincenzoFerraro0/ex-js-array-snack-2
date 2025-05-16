@@ -69,42 +69,42 @@ const books = [
 ];
 
 //? Snack 1 
-// const longBooks = books.filter(b => b.pages > 300)
+const longBooks = books.filter(b => b.pages > 300)
 
-// console.log(longBooks)
+console.log(longBooks)
 
-// const longBooksTitles = longBooks.map(b => {
-//     return b.title
-// })
+const longBooksTitles = longBooks.map(b => {
+    return b.title
+})
 
-// console.log(longBooksTitles)
+console.log(longBooksTitles)
 
-// longBooksTitles.forEach(b =>{
-//     console.log('Titolo:',b)
-// })
+longBooksTitles.forEach(b =>{
+    console.log('Titolo:',b)
+})
 
 //? Snack 2
-// const availableBooks = books.filter(b => b.available === true)
+const availableBooks = books.filter(b => b.available === true)
 
-// console.log('libri disponibili:',availableBooks)
+console.log('libri disponibili:',availableBooks)
 
-// const discountedBooks = availableBooks.map(b => {
-//     const price = parseFloat(b.price);
-//     const priceDiscount = (price * .8 ).toFixed(2);
-//     return{
-//         ...b,
-//         price: `${priceDiscount}€`
-//     }
-// })
+const discountedBooks = availableBooks.map(b => {
+    const price = parseFloat(b.price);
+    const priceDiscount = (price * .8 ).toFixed(2);
+    return{
+        ...b,
+        price: `${priceDiscount}€`
+    }
+})
 
-// console.log('Libri Scontati:',discountedBooks)
+console.log('Libri Scontati:',discountedBooks)
 
-// const fullPricedBook = discountedBooks.find(b => {
-//     const price = parseFloat(b.price)
-//     return price % 1 === 0
+const fullPricedBook = discountedBooks.find(b => {
+    const price = parseFloat(b.price)
+    return price % 1 === 0
 
-// })
-// console.log(fullPricedBook)
+})
+console.log(fullPricedBook)
 
 
 //? Snack 3
@@ -125,4 +125,14 @@ authors.sort((a, b) => areAuthorsAdults ? a.age - b.age : b.age - a.age);
 
 
 //? Snack 4
+
+const age = authors.map(a => a.age)
+console.log('Età degli autori:',age)
+
+const ageSum = age.reduce((acc, age) => {
+    return acc + age
+}, 0)
+
+console.log('Età media degli autori:',ageSum / age.length)
+
 
