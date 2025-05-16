@@ -84,30 +84,45 @@ const books = [
 // })
 
 //? Snack 2
-const availableBooks = books.filter(b => b.available === true)
+// const availableBooks = books.filter(b => b.available === true)
 
-console.log('libri disponibili:',availableBooks)
+// console.log('libri disponibili:',availableBooks)
 
-const discountedBooks = availableBooks.map(b => {
-    const price = parseFloat(b.price);
-    const priceDiscount = (price * .8 ).toFixed(2);
-    return{
-        ...b,
-        price: `${priceDiscount}€`
+// const discountedBooks = availableBooks.map(b => {
+//     const price = parseFloat(b.price);
+//     const priceDiscount = (price * .8 ).toFixed(2);
+//     return{
+//         ...b,
+//         price: `${priceDiscount}€`
+//     }
+// })
+
+// console.log('Libri Scontati:',discountedBooks)
+
+// const fullPricedBook = discountedBooks.find(b => {
+//     const price = parseFloat(b.price)
+//     return price % 1 === 0
+
+// })
+// console.log(fullPricedBook)
+
+
+//? Snack 3
+
+const authors = books.map(b => {
+    return {
+        name: b.author.name,
+        age: b.author.age
     }
 })
+console.log('Autori dei libri:', authors)
 
-console.log('Libri Scontati:',discountedBooks)
+const areAuthorsAdults = authors.every(a => a.age >= 18)
 
-const fullPricedBook = discountedBooks.find(b => {
-    const price = parseFloat(b.price)
-    return price % 1 === 0
-    
-})
-console.log(fullPricedBook)
+console.log('Gli autori sono tutti maggiorenni?', areAuthorsAdults)
+
+authors.sort((a, b) => areAuthorsAdults ? a.age - b.age : b.age - a.age);
 
 
-
-
-
+//? Snack 4
 
