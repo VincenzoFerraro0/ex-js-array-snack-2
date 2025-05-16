@@ -68,3 +68,25 @@ const books = [
     },
 ];
 
+const longBooks = books.filter(b => b.pages > 300)
+
+console.log(longBooks)
+
+const longBooksTitles = longBooks.map(b => {
+    return b.title
+})
+
+console.log(longBooksTitles)
+
+longBooksTitles.forEach(b =>{
+    console.log('Titolo:',b)
+})
+
+const availableBooks = books.filter(b => b.available === true)
+
+console.log('libri disponibili:',availableBooks)
+
+
+
+
+
