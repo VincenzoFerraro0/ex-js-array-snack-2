@@ -126,13 +126,13 @@ authors.sort((a, b) => areAuthorsAdults ? a.age - b.age : b.age - a.age);
 
 //? Snack 4
 
-const age = authors.map(a => a.age)
-console.log('Età degli autori:',age)
+const ages = authors.map(a => a.age)
+console.log('Età degli autori:',ages)
 
-const ageSum = age.reduce((acc, age) => {
+const ageSum = ages.reduce((acc, age) => {
     return acc + age
 }, 0)
 
-console.log('Età media degli autori:',ageSum / age.length)
+console.log('Età media degli autori:',ageSum / ages.length)
 
 
